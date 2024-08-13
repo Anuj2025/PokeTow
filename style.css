@@ -1,0 +1,154 @@
+body {
+    font-size: 15pt;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 100vh;
+    color: #333;
+    background: #050936;
+    font-family: "Roboto", sans-serif;
+  font-style: normal;
+  flex-wrap: wrap;
+}
+
+*{
+  margin:  0 0 0;
+  padding: 0;
+  row-gap: 2rem;
+  text-transform: capitalize;
+}
+
+.PokeMon{
+  width: 290px;
+  min-height: 200px;
+  height: auto;
+  background: #070D58;
+  border-radius: 10px;
+  position: relative;
+}
+
+.con{
+  padding: 30px;
+}
+
+.PokeMon img{
+  width: 190px;
+  height: 190px;
+  margin: 30px;
+  outline: none;
+  border: none;
+}
+
+.hp{
+  padding: 5px;
+  border-radius: 10px;
+  text-align: center;
+  background: #fff;
+  max-width: 100px;
+}
+
+#NameComponent {
+  padding: 5px;
+  border-radius: 10px;
+  text-align: center;
+  background: #fff;
+  box-shadow: 1px 1px 5px #FFFFFF8C;
+}
+
+@property --angle{
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inheritis: false;
+}
+
+.PokeMon:before, .PokeMon:after{
+  --angle: 0deg;
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  padding: 3px;
+  background-image: linear-gradient(var(--angle) , #E600FF, #FF000000, #FF0000);
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 10px;
+  z-index: -1;
+  animation: spin 5s linear infinite;
+}
+
+.PokeMon:before{
+  filter: blur(1rem);
+  opacity: 0.7;
+}
+
+@keyframes spin {
+  fron {
+    --angle: 0deg;
+  }
+  to {
+    --angle: 360deg;
+  }
+}
+
+
+.Theme{
+  width: 100%;
+  height: 20%;
+  background: red;
+}
+
+.User{
+  z-index: 2;
+  padding: 5px;
+  border-radius: 5px;
+  background: royalblue;
+  color: #fff;
+  width: 40px;
+  border: 1px solid royalblue;
+  position: absolute;
+  right: 40px;
+  top: 80px;
+  font-size: .7rem;
+  transform: rotate(30deg);
+}
+
+.Creator{
+  font-size: .7rem;
+  margin-top: 10%;
+  color: #F6F6F6;
+}
+
+.loder{
+  text-align: center;
+  position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-45%, -45%);
+display: none;
+animation: color 1s linear infinite;
+}
+@keyframes color {
+  0%{
+    color: #051AFF;
+    transform: rotate(0deg);
+  }
+  50%{
+    color: #FF0505;
+    transform: rotate(90deg);
+  }
+  70%{
+    color: #CB05FF;
+    transform: rotate(160deg);
+  }
+  100%{
+    color: #051AFF;
+    transform: rotate(360deg);
+  }
+}
+
+
+.con{
+  display: none;
+}
